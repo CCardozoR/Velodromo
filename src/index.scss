@@ -1,0 +1,59 @@
+$base-color: rgba(87, 66, 168, 1);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 5rem;
+  background-image: url('resources/Logo.png'), linear-gradient(
+    135deg,
+    hsl(49deg 100% 58%) 0%,
+    hsl(47deg 90% 60%) 2%,
+    hsl(45deg 78% 61%) 4%,
+    hsl(43deg 66% 62%) 6%,
+    hsl(40deg 54% 62%) 9%,
+    hsl(35deg 41% 62%) 11%,
+    hsl(27deg 28% 61%) 14%,
+    hsl(6deg 16% 60%) 17%,
+    hsl(317deg 12% 54%) 21%,
+    hsl(274deg 18% 51%) 26%,
+    hsl(260deg 28% 49%) 34%,
+    hsl(252deg 44% 46%) 48%,
+    hsl(252deg 44% 44%) 58%,
+    hsl(252deg 44% 42%) 65%,
+    hsl(252deg 44% 39%) 70%,
+    hsl(252deg 44% 37%) 75%,
+    hsl(252deg 44% 34%) 79%,
+    hsl(252deg 44% 31%) 83%,
+    hsl(252deg 44% 28%) 87%,
+    hsl(252deg 44% 24%) 90%,
+    hsl(252deg 44% 20%) 94%,
+    hsl(252deg 44% 14%) 97%,
+    hsl(0deg 0% 0%) 100%
+  );
+  background-size: 100vw 100vw , cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 640px) {
+  .container{
+    background-size: 640px 640px , cover;
+  }
+}
+
+
