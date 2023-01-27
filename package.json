@@ -2,7 +2,7 @@
   "name": "velodromo",
   "private": true,
   "homepage": "http://espressorace.com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Team espresso web page, Kom coffe Tunja, Velodromo, Ciclismo Boyaca",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",

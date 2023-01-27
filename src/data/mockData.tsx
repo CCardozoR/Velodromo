@@ -2,7 +2,7 @@ import { IClasifficationTableProps, IClasifficationTableItemProps } from "../app
 
 //Racers
 export const RacersAltoSote: IClasifficationTableItemProps[] =  [
-  { id:'1', nick: 'Fabio', gender:'M', points: 0, previousTime: '34:32', time: '30:10'},
+  { id:'1', nick: 'Fabio', gender:'M', points: 0, previousTime: '28:18', time: '30:10'},
   { id:'2', nick: 'Aleja', gender:'F', points: 0, previousTime: '27:11', time: '31:18' },
   { id:'3', nick: 'Rodrigo', gender:'M', points: 0, previousTime: '28:18', time: '31:15' },
   { id:'4', nick: 'Hernan', gender:'M', points: 0, previousTime: '25:58', time: '23:19' },
