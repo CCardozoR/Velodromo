@@ -1,0 +1,20 @@
+.filter-container{
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-button{
+    height:3rem;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    border-radius: 6px;
+    border: rgba(255, 255, 255, 0.35);
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+    color: #f3f3f3;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.filter-button:nth-child(4){
+    margin-right: 0;
+}

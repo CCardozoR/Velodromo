@@ -15,10 +15,9 @@ code {
 }
 
 .container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  // padding-top: 5rem;
   background-image: url('resources/Logo.png'), linear-gradient(
     135deg,
     hsl(49deg 100% 58%) 0%,
@@ -45,7 +44,7 @@ code {
     hsl(252deg 44% 14%) 97%,
     hsl(0deg 0% 0%) 100%
   );
-  background-size: 100vw 100vw , cover;
+  background-size: 100vw 100vw, cover;
   background-position: center;
   background-repeat: no-repeat;
 }

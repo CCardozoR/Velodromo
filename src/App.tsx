@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.scss';
-import ClasifficationTable from './components/ClassificationTable/ClasifficationTable';
+import ClasifficationTable from './app/components/ClassificationTable/ClasifficationTable';
+import FiltersBar from './app/components/Filters/Filters';
+import { AltoSote } from './data/mockData';
 
 function App() {
+  
   return (
     <div className='app'>
-      <ClasifficationTable />
+      <FiltersBar/>
+      <ClasifficationTable {...AltoSote}/>
     </div>
   );
 }
