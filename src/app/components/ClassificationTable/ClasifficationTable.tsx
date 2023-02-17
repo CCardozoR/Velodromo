@@ -36,11 +36,11 @@ function ClasifficationTableItem(props: IClasifficationTableItemProps) {
   }
 
   const improvementCell = () => {
-    if (previousTime === undefined || time === undefined){
+    if (previousTime === undefined || time === undefined) {
       return null;
     }
-    if (previousTime !== undefined && time === ''){
-      return <td>DNF</td>
+    if (previousTime !== undefined && time === '') {
+      return <td>DNS</td>;
     }
     if (filterValue === FiltersImprovement.IMPROVEMENT_PERCENTAGE) {
       return (
@@ -72,14 +72,15 @@ function ClasifficationTableItem(props: IClasifficationTableItemProps) {
       <td>{position}</td>
       <td>{nick}</td>
       <td>
-        {time !== undefined && time === '' && '0'}
-        {time !== undefined && time !== '' && points}
-        </td>
+        {/* {time !== undefined && time === '' && '0'} */}
+        {/* {time !== undefined && time !== '' && points} */}
+        {points}
+      </td>
       {previousTime !== undefined && (
         <td className='times'>
           {previousTime !== '' && <p>{`Pre: ${previousTime}`}</p>}
-          {time !== undefined  && time !== '' && <p>{`Pos: ${time}`}</p>}
-          {time !== undefined && time === '' && <p>Pos: DNF</p>}
+          {time !== undefined && time !== '' && <p>{`Pos: ${time}`}</p>}
+          {time !== undefined && time === '' && <p>Pos: DNS</p>}
         </td>
       )}
       {improvementCell()}
@@ -88,6 +89,9 @@ function ClasifficationTableItem(props: IClasifficationTableItemProps) {
 }
 
 const timeToSeconds = (time: string): number => {
+  if (time === '') {
+    return Number.MAX_VALUE;
+  }
   const timeSplit = time.split(':');
   const minutes = Number(timeSplit[0]);
   const seconds = Number(timeSplit[1]);
@@ -116,27 +120,25 @@ function ClasifficationTable(props: IClasifficationTableProps) {
   const dispatch = useDispatch();
   let columns = 4 + Number(finished);
 
-  const uiTableGenerated = finished ? 
-  ( orderRacers(racers, tableGenerated).map((racer, index) => {
-    return (
-      <ClasifficationTableItem
-        key={racer.id}
-        position={index + 1}
-        {...racer}
-      />
-    );
-  })) 
-  : 
-  ( racers.map((racer, index) => {
-    return (
-      <ClasifficationTableItem
-        key={racer.id}
-        position={index + 1}
-        {...racer}
-      />
-    );
-  })) ;
-
+  const uiTableGenerated = finished
+    ? orderRacers(racers, tableGenerated).map((racer, index) => {
+        return (
+          <ClasifficationTableItem
+            key={racer.id}
+            position={index + 1}
+            {...racer}
+          />
+        );
+      })
+    : racers.map((racer, index) => {
+        return (
+          <ClasifficationTableItem
+            key={racer.id}
+            position={index + 1}
+            {...racer}
+          />
+        );
+      });
 
   return (
     <table>
@@ -160,9 +162,7 @@ function ClasifficationTable(props: IClasifficationTableProps) {
           )}
         </tr>
       </thead>
-      <tbody>
-        {uiTableGenerated}
-      </tbody>
+      <tbody>{uiTableGenerated}</tbody>
     </table>
   );
 }
